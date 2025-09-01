@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Guilherme Freitas Silva</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #ffffff;
+            margin: 20px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .item {
+            margin-bottom: 25px;
+        }
+        
+        .item h3 {
+            margin-bottom: 3px;
+            font-size: 1.3em;
+            color: #2c3e50;
+        }
+
+        .item p {
+            margin: 0;
+            font-style: italic;
+            color: #777;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        #contact-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto 0;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact-button:hover {
+            background-color: #2980b9;
+        }
+        
+        #contact-details {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #eaf6ff;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="cabeçalho">
+            <h1>Guilherme Freitas Silva</h1>
+            <p>Analista de Sistemas</p>
+            <p>Ribeirão Preto - SP</p>
+        </header>
+
+        <section>
+            <h2>Resumo Profissional</h2>
+            <div class="item">
+                <p>Profissional entusiasta e proativo, com excelente habilidade de comunicação e forte interesse em crescer na área de tecnologia. Sou movido por desafios e busco constantemente novos aprendizados para aplicar em soluções inovadoras e colaborar com o sucesso da equipe.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experiência Profissional</h2>
+            <div class="item">
+                <h3>Brasil Canter comunicações - BCC | Representante de serviços especializadosm- JEC</h3>
+                <p>Janeiro 2019 – Outubro 2019</p>
+                <ul>
+                    <li>Identificar e cumprir as ações 
+solicitadas nas sentenças judiciais 
+atribuídas à Claro TV. Isso inclui fazer 
+todas as ações sistêmicas que a 
+sentença determinava. Elaboração de 
+um dossiê com telas sistêmicas 
+comprovando o cumprimento das 
+obrigações impostas à Claro TV. Manter 
+contato direto com seus advogados e 
+clientes.</li>
+                    
+                </ul>
+            </div>
+
+            <div class="item">
+                <h3>Foco Iluminação | Auxiliar de estoque</h3>
+                <p>Abril - 2021 – Fevereiro - 2025</p>
+                <ul>
+                    <li>Rotinas relacionadas a estoque. 
+Controle, recebimento e 
+armazenamento dos materias de 
+iluminação. Conferência de materiais, 
+liberação para entregas, 
+preenchimento de planilhas e uso de 
+sistemas de organizações.</li>
+                    
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Formação Acadêmica</h2>
+            <div class="item">
+                <h3>Nome da Instituição de Ensino</h3>
+                <p>Nome do Curso – Ano de Conclusão</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Habilidades</h2>
+            <div class="item">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Algorítimos e Lógica de programação</li>
+                    <li>Programação em C (Básico)</li>
+                    <li>Poo - C# (Básico)</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Corel Draw</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Trabalho em Equipe</li>
+                    <li>Comunicação Interpessoal</li>
+                    <li>Empatia</li>
+                    <li>Escuta ativa</li>
+                </ul>
+            </div>
+        </section>
+
+        <div id="contact-details">
+            <strong>Email:</strong> guifreittaz@gmail.com <br>
+            <strong>Telefone:</strong> (16) 99333-2107 <br>
+            <strong>LinkedIn:</strong> www.linkedin.com/in/guilherme-freitas-silva-2b730b38
+        </div>
+        
+        <button id="contact-button">Mostrar Contato</button>
+
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const contactButton = document.getElementById('contact-button');
+            const contactDetails = document.getElementById('contact-details');
+
+            contactButton.addEventListener('click', function() {
+                
+                if (contactDetails.style.display === 'none' || contactDetails.style.display === '') {
+                    contactDetails.style.display = 'block';
+                    contactButton.textContent = 'Ocultar Contato';
+                } else {
+                    contactDetails.style.display = 'none';
+                    contactButton.textContent = 'Mostrar Contato';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
