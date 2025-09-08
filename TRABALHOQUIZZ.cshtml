@@ -1,0 +1,140 @@
+﻿@{
+    ViewData["Title"] = "Quiz de História da Música";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        .quiz-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px #aaa;
+        }
+
+        .question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            button:hover {
+                background: #45a049;
+            }
+
+        #result {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Quiz de História da Música</h2>
+        <div id="quiz">
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <button onclick="nextQuestion()">Responder</button>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Perguntas
+        const questions = [
+            {
+                question: "Quem é conhecido como o 'Rei do Rock'?",
+                options: ["Elvis Presley", "Michael Jackson", "Freddie Mercury", "John Lennon"],
+                answer: 0
+            },
+            {
+                question: "Qual compositor ficou surdo mas continuou criando músicas famosas?",
+                options: ["Mozart", "Beethoven", "Bach", "Chopin"],
+                answer: 1
+            },
+            {
+                question: "Qual banda ficou famosa com a música 'Hey Jude'?",
+                options: ["The Rolling Stones", "The Beatles", "Pink Floyd", "Queen"],
+                answer: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            let q = questions[currentQuestion];
+            document.getElementById("question").textContent = q.question;
+            let optionsHtml = "";
+            for (let i = 0; i < q.options.length; i++) {
+                optionsHtml += `<input type='radio' name='option' value='${i}'> ${q.options[i]} <br>`;
+            }
+            document.getElementById("options").innerHTML = optionsHtml;
+            document.getElementById("result").textContent = "";
+            document.getElementById("result").className = "";
+        }
+
+        function nextQuestion() {
+            let selected = document.querySelector("input[name='option']:checked");
+            if (selected) {
+                let resultDiv = document.getElementById("result");
+                if (parseInt(selected.value) === questions[currentQuestion].answer) {
+                    score++;
+                    resultDiv.textContent = "Você acertou!";
+                    resultDiv.className = "correct";
+                } else {
+                    resultDiv.textContent = "Você errou!";
+                    resultDiv.className = "wrong";
+                }
+
+                setTimeout(() => {
+                    currentQuestion++;
+                    if (currentQuestion < questions.length) {
+                        loadQuestion();
+                    } else {
+                        document.getElementById("quiz").innerHTML =
+                            `<h3>Você acertou ${score} de ${questions.length}!</h3>`;
+                    }
+                }, 1000);
+
+            } else {
+                document.getElementById("result").textContent = "Escolha uma opção antes de continuar!";
+                document.getElementById("result").className = "wrong";
+            }
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
